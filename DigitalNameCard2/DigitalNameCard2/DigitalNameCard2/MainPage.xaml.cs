@@ -9,6 +9,8 @@ namespace DigitalNameCard2
 {
 	public partial class MainPage : ContentPage
 	{
+       
+
 		public MainPage()
 		{
 			InitializeComponent();
@@ -26,6 +28,7 @@ namespace DigitalNameCard2
                 c.Width = GridLength.Star;
                 root.ColumnDefinitions.Add(c);
             }
+            btnSave.Clicked += BtnSave_Clicked;
 
             //CardLabel name = new CardLabel(20, 15, 3, 15, NamedSize.Large, TextAlignment.Center);
             //name.Text = "John Wick";
@@ -50,5 +53,12 @@ namespace DigitalNameCard2
             NameCard card = NameCard.CreateCardDesign(1);
             card.SetNameCard(root, background, "John Doe", "- Main Photographer -", "www.johndoephotography.com", "+6281233344455", "john.doe@johndoephotography.com", "Jl. Dago 999, Bandung, Indonesia");
         }
-	}
+
+        private void BtnSave_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.Properties["test"] = "2323232";
+            Application.Current.SavePropertiesAsync();
+
+        }
+    }
 }

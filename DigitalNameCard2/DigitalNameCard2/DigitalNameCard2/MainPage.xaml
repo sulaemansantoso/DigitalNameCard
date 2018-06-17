@@ -8,6 +8,12 @@
         <Image x:Name="background" Aspect="AspectFill" />
         <Grid x:Name="root">
         </Grid>
+        <StackLayout Orientation="Vertical">
+            <Button x:Name="btnSave" Text="Store Value"></Button>
+            <Button x:Name="btnLoad" Text="Get Value"></Button>
+            <Entry x:Name="eSavedField" ></Entry>
+        </StackLayout>
+
     </Grid>
 
 </ContentPage>

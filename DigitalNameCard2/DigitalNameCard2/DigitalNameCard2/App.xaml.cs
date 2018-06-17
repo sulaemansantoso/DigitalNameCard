@@ -9,7 +9,20 @@ namespace DigitalNameCard2
 {
 	public partial class App : Application
 	{
-		public App ()
+
+        static Services.DataAccess dbUtils;
+        public static Services.DataAccess DbUtils
+        {
+            get
+            {
+                if (dbUtils == null)
+                {
+                    dbUtils = new Services.DataAccess();
+                }
+                return dbUtils;
+            }
+        }
+        public App ()
 		{
 			InitializeComponent();
 
